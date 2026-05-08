@@ -1,0 +1,34 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+#includeEtc "caseDicts/mesh/generation/snappyHexMeshDict.cfg"
+castellatedMesh on; snap on; addLayers off;
+geometry {
+    buildings { type triSurfaceMesh; file "buildings.stl"; }
+    refinementBox { type box; min (-854.428401095036 -854.428401095036 0); max (854.428401095036 854.428401095036 43.95); }
+    pedestrianZone { type box; min (-854.428401095036 -854.428401095036 0); max (854.428401095036 854.428401095036 2.0); }
+};
+castellatedMeshControls {
+    features ( { file "buildings.eMesh"; level 1; } );
+    refinementSurfaces { buildings { level (3 3); patchInfo { type wall; } } }
+    refinementRegions { refinementBox { mode inside; level 2; } pedestrianZone { mode inside; level 3; } }
+    locationInMesh (0.1 0.1 87.9);
+    nCellsBetweenLevels 3;
+}
+snapControls { explicitFeatureSnap true; }
+addLayersControls { relativeSizes true; layers { "buildings" { nSurfaceLayers 2; } } expansionRatio 1.2; 
+                                                                                            finalLayerThickness 0.5; 
+                                                                                            minThickness 0.1;}
+meshQualityControls { #includeEtc "caseDicts/mesh/generation/meshQualityDict.cfg" }
+mergeTolerance 1e-6;
