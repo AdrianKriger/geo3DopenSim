@@ -23,7 +23,7 @@ castellatedMeshControls {
     features ( { file "buildings.eMesh"; level 1; } );
     refinementSurfaces { buildings { level (3 3); patchInfo { type wall; } } }
     refinementRegions { refinementBox { mode inside; level 2; } pedestrianZone { mode inside; level 3; } }
-    locationInMesh (0.1 0.1 96.30000000000001);
+    locationInMesh (721.9540429633926 720.5990803726017 96.30000000000001);
     nCellsBetweenLevels 3;
 }
 snapControls { explicitFeatureSnap true; }
