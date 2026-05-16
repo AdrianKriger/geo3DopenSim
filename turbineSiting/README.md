@@ -1,4 +1,4 @@
-### geo3D OpenFOAM configuration files\
+### geo3D OpenFOAM configuration files
 
 ![turbineSiting visualisation](../docs/turbineSiting.jpg)
 
