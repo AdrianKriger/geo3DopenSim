@@ -25,3 +25,20 @@ openfoam/
 ```
 
 OpenFOAM simulation results available [here](https://drive.google.com/file/d/1KA8nDcnJ8SjVFzPoleSRsDUZRd8zz1qw/view?usp=share_link)
+
+
+openfoam commands are:
+```
+
+blockMesh
+
+surfaceFeatures
+
+surfaceCheck constant/geometry/buildings.obj | tee surfaceCheck_$(date +%Y%m%d_%H%M).log
+
+snappyHexMesh
+
+checkMesh | tee checkMesh_$(date +%Y%m%d_%H%M).log
+
+foamRun -solver incompressibleFluid | tee foamRun_$(date +%Y%m%d_%H%M).log
+```

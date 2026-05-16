@@ -1,0 +1,198 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+actions
+(
+{
+        name actuationDiskSource15;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (308.85 1089.40 66.41) (548.85 1329.40 266.41); }
+    }
+    {
+        name actuationDiskSource15;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource15; }
+    }
+{
+        name actuationDiskSource19;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (-317.07 760.91 64.64) (-77.07 1000.91 264.64); }
+    }
+    {
+        name actuationDiskSource19;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource19; }
+    }
+{
+        name actuationDiskSource20;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (294.26 293.50 71.12) (534.26 533.50 271.12); }
+    }
+    {
+        name actuationDiskSource20;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource20; }
+    }
+{
+        name actuationDiskSource21;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (610.45 109.53 79.38) (850.45 349.53 279.38); }
+    }
+    {
+        name actuationDiskSource21;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource21; }
+    }
+{
+        name actuationDiskSource24;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (-1185.29 386.80 70.09) (-945.29 626.80 270.09); }
+    }
+    {
+        name actuationDiskSource24;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource24; }
+    }
+{
+        name actuationDiskSource25;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (-858.96 89.70 71.82) (-618.96 329.70 271.82); }
+    }
+    {
+        name actuationDiskSource25;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource25; }
+    }
+{
+        name actuationDiskSource26;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (-496.20 -70.93 67.86) (-256.20 169.07 267.86); }
+    }
+    {
+        name actuationDiskSource26;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource26; }
+    }
+{
+        name actuationDiskSource27;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (53.63 -376.48 72.44) (293.63 -136.48 272.44); }
+    }
+    {
+        name actuationDiskSource27;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource27; }
+    }
+{
+        name actuationDiskSource28;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (384.56 -606.44 79.67) (624.56 -366.44 279.67); }
+    }
+    {
+        name actuationDiskSource28;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource28; }
+    }
+{
+        name actuationDiskSource29;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (736.88 -773.43 86.19) (976.88 -533.43 286.19); }
+    }
+    {
+        name actuationDiskSource29;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource29; }
+    }
+{
+        name actuationDiskSource33;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (-713.12 -731.27 69.73) (-473.12 -491.27 269.73); }
+    }
+    {
+        name actuationDiskSource33;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource33; }
+    }
+{
+        name actuationDiskSource34;
+        type cellSet;
+        action new;
+        source boxToCell;
+        sourceInfo
+        { box (-205.33 -1014.42 82.89) (34.67 -774.42 282.89); }
+    }
+    {
+        name actuationDiskSource34;
+        type cellZoneSet;
+        action new;
+        source setToCellZone;
+        sourceInfo { set actuationDiskSource34; }
+    }
+
+);

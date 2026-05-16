@@ -1,0 +1,126 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+castellatedMesh true;
+snap true;
+addLayers false;
+mergeTolerance 1e-6;
+geometry { terrain { type triSurfaceMesh; file "terrain.obj"; } 
+refinementBox15
+{
+    type box;
+    min (178.85 959.40 16.41);
+    max (1028.85 1459.40 366.41);
+}
+refinementBox19
+{
+    type box;
+    min (-447.07 630.91 14.64);
+    max (402.93 1130.91 364.64);
+}
+refinementBox20
+{
+    type box;
+    min (164.26 163.50 21.12);
+    max (1014.26 663.50 371.12);
+}
+refinementBox21
+{
+    type box;
+    min (480.45 -20.47 29.38);
+    max (1330.45 479.53 379.38);
+}
+refinementBox24
+{
+    type box;
+    min (-1315.29 256.80 20.09);
+    max (-465.29 756.80 370.09);
+}
+refinementBox25
+{
+    type box;
+    min (-988.96 -40.30 21.82);
+    max (-138.96 459.70 371.82);
+}
+refinementBox26
+{
+    type box;
+    min (-626.20 -200.93 17.86);
+    max (223.80 299.07 367.86);
+}
+refinementBox27
+{
+    type box;
+    min (-76.37 -506.48 22.44);
+    max (773.63 -6.48 372.44);
+}
+refinementBox28
+{
+    type box;
+    min (254.56 -736.44 29.67);
+    max (1104.56 -236.44 379.67);
+}
+refinementBox29
+{
+    type box;
+    min (606.88 -903.43 36.19);
+    max (1456.88 -403.43 386.19);
+}
+refinementBox33
+{
+    type box;
+    min (-843.12 -861.27 19.73);
+    max (6.88 -361.27 369.73);
+}
+refinementBox34
+{
+    type box;
+    min (-335.33 -1144.42 32.89);
+    max (514.67 -644.42 382.89);
+} }
+castellatedMeshControls
+{
+    maxLocalCells 4000000;
+    maxGlobalCells 15000000;
+    minRefinementCells 10;
+    nCellsBetweenLevels 2;
+    resolveFeatureAngle 30;
+    allowFreeStandingZoneFaces true;
+    
+    features ();
+    refinementSurfaces { terrain { level (1 2); patchInfo { type wall; } } }
+    refinementRegions { 
+        refinementBox15 { mode inside; levels ((3 3)); }
+        refinementBox19 { mode inside; levels ((3 3)); }
+        refinementBox20 { mode inside; levels ((3 3)); }
+        refinementBox21 { mode inside; levels ((3 3)); }
+        refinementBox24 { mode inside; levels ((3 3)); }
+        refinementBox25 { mode inside; levels ((3 3)); }
+        refinementBox26 { mode inside; levels ((3 3)); }
+        refinementBox27 { mode inside; levels ((3 3)); }
+        refinementBox28 { mode inside; levels ((3 3)); }
+        refinementBox29 { mode inside; levels ((3 3)); }
+        refinementBox33 { mode inside; levels ((3 3)); }
+        refinementBox34 { mode inside; levels ((3 3)); } }
+    insidePoint (4.39 49.74 564.64); 
+}
+snapControls { nSmoothPatch 5; tolerance 2.0; nSolveIter 100; nRelaxIter 8; }
+meshQualityControls { 
+    #include "meshQualityDict"
+    maxNonOrtho 75; 
+    maxBoundarySkewness 20;
+    maxInternalSkewness 4;
+    maxConcave 80;
+    minVol 1e-13;
+}
