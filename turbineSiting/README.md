@@ -24,3 +24,4 @@ checkMesh | tee checkMesh_$(date +%Y%m%d_%H%M).log
 
 foamRun -solver incompressibleFluid | tee foamRun_$(date +%Y%m%d_%H%M).log
 ```
+a taste of the results (wake influence, power curve and power loss) are in the [turbineSiting.ipynb](https://github.com/AdrianKriger/geo3DopenSim/blob/main/turbineSiting/turbineSiting.ipynb)
