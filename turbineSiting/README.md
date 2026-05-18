@@ -1,8 +1,8 @@
-### *geo3D* OpenFOAM configuration files\
+### *geo3D* OpenFOAM configuration files
 
 ![turbineSiting visualisation](../docs/turbineSiting.jpg)
 
-LoD1 building models (.obj) for renewable wind facility optimisation \
+LoD1 building models (.obj) for renewable wind facility optimisation 
 
 OpenFOAM simulation results available [here](https://drive.google.com/file/d/1SCjUU2tgAF9MOSMQKba05FmNaqGnL6ew/view?usp=share_link)
 
