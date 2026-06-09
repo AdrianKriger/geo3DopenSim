@@ -18,118 +18,148 @@ from matplotlib.patches import Polygon as MplPolygon
 from matplotlib.collections import PatchCollection
 from IPython.display import IFrame, display
 
-def reconstruct_openfoam_results(case_path, gdf, wind_deg, extent, radius=400.0):
+def load_openfoam_vtk(file_name='hubHeight.vtk', wind_deg=0, extent=None, radius=400.0):
+    """
+    Generic, state-aware parser for OpenFOAM ASCII VTK files containing CELL_DATA fields.
+    Automatically discovers point populations, arbitrary topology shapes, and dynamic FIELD sets.
+    """
+    vtk_path = file_name #os.path.join(case_path, file_name)
+    if not os.path.exists(vtk_path):
+        raise FileNotFoundError(f"Could not find VTK file at: {vtk_path}")
+        
+    #print(f"Executing generic VTK stream analysis on: {file_name}")
+    
+    # Storage blocks for parsed token arrays
+    raw_coords = None
+    poly_ints = None
+    n_cells = 0
+    fields_dict = {}
 
-    def parse_vector(path):
-        with open(path, 'r', encoding='utf-8', errors='ignore') as f:
-            content = f.read()
-        match = re.search(r'\n(\d+)\s*\n\s*\(', content)
-        n = int(match.group(1))
-        limit = content.find('boundaryField', match.end())
-        if limit == -1: limit = len(content)
-        end_pos = content.rfind(')', match.end(), limit)
-        data_str = content[match.end():end_pos]
-        return np.fromstring(data_str.replace('(', ' ').replace(')', ' '),
-                             dtype=float, sep=' ').reshape(n, 3)
+    # --- Phase 1: Robust State-Aware Linear Scanner ---
+    with open(vtk_path, 'r', encoding='utf-8', errors='ignore') as f:
+        while True:
+            line = f.readline()
+            if not line:
+                break
+                
+            line_strip = line.strip()
+            if not line_strip:
+                continue
 
-    def parse_labels(path):
-        with open(path, 'r', encoding='utf-8', errors='ignore') as f:
-            content = f.read()
-        match = re.search(r'\n(\d+)\s*\n\s*\(', content)
-        n = int(match.group(1))
-        data_str = content[match.end() : content.rfind(')', match.end())]
-        return np.fromstring(data_str, dtype=int, sep=' ')
+            # A. Catch Points Array Layout
+            if line_strip.startswith('POINTS'):
+                parts = line_strip.split()
+                n_points = int(parts[1])
+                dtype_str = parts[2].lower()
+                #print(f" -> Extracting {n_points} vertices ({dtype_str})...")
+                
+                # Dynamic stream sizing: 3 coordinates per point
+                raw_coords = np.fromfile(f, dtype=float, count=n_points * 3, sep=' ').reshape(n_points, 3)
 
-    def parse_faces_vectorized(path):
-        """Returns (face_point_indices, face_sizes) if mixed polyhedral,
-           or a single (N_faces, K) array if uniform."""
-        with open(path, 'r', encoding='utf-8', errors='ignore') as f:
-            content = f.read()
-        # Extract all face definitions
-        raw = re.findall(r'\d+\(([^)]+)\)', content)
-        sizes = []
-        indices = []
-        for face_str in raw:
-            pts_idx = np.fromstring(face_str, dtype=np.int32, sep=' ')
-            sizes.append(len(pts_idx))
-            indices.append(pts_idx)
-        return indices, np.array(sizes)
+            # B. Catch Polygon Topology Array Layout
+            elif line_strip.startswith('POLYGONS'):
+                parts = line_strip.split()
+                n_cells = int(parts[1])
+                total_ints = int(parts[2])
+                #print(f" -> Extracting {n_cells} polygon faces (Descriptor space: {total_ints} ints)...")
+                
+                poly_ints = np.fromfile(f, dtype=int, count=total_ints, sep=' ')
 
-    # Load
-    pts     = parse_vector(os.path.join(case_path, 'points'))
-    owner   = parse_labels(os.path.join(case_path, 'owner'))
-    neighbour = parse_labels(os.path.join(case_path, 'neighbour'))
-    u_field = parse_vector(os.path.join(case_path, 'U'))
-    faces, face_sizes = parse_faces_vectorized(os.path.join(case_path, 'faces'))
+            # C. Catch Variable Field Block Metadata
+            elif line_strip.startswith('CELL_DATA'):
+                n_cells_verify = int(line_strip.split()[1])
+                assert n_cells == n_cells_verify, "Topology count mismatch encountered during streaming section pass."
+                
+                # Check next marker line to resolve inner FIELD tags
+                next_line = f.readline().strip()
+                if next_line.startswith('FIELD'):
+                    field_parts = next_line.split()
+                    num_fields = int(field_parts[2])
+                    
+                    # Dynamically ingest every field written inside this block
+                    for _ in range(num_fields):
+                        attr_meta = f.readline().strip().split()
+                        attr_name = attr_meta[0]
+                        num_comps = int(attr_meta[1])
+                        num_tuples = int(attr_meta[2])
+                        # Array data stream type flag
+                        data_type = attr_meta[3].lower() 
+                        
+                        total_elements = num_tuples * num_comps
+                        #print(f"   + Discovered dynamic array attribute: '{attr_name}' [{num_comps} component(s), {num_tuples} items]")
+                        
+                        # Ingest data elements straight into flat numpy structures
+                        field_data = np.fromfile(f, dtype=float, count=total_elements, sep=' ')
+                        
+                        if num_comps > 1:
+                            fields_dict[attr_name] = field_data.reshape(num_tuples, num_comps)
+                        else:
+                            fields_dict[attr_name] = field_data
 
-    n_cells = u_field.shape[0]
+    # --- Phase 2: Vectorized Spatial Inversion and Polygon Centroid Reconstruction ---
+    #print(" -> Processing element cell connectivity midpoints...")
+    cell_centers = np.empty((n_cells, 3), dtype=float)
+    
+    # Rapid pointer navigation tracking across varying layout structures (triangles vs quads)
+    idx = 0
+    cell_idx = 0
+    while idx < len(poly_ints):
+        n_verts = poly_ints[idx]
+        vert_indices = poly_ints[idx + 1 : idx + 1 + n_verts]
+        # Calculate localized geometric midpoint coordinate
+        cell_centers[cell_idx] = raw_coords[vert_indices].mean(axis=0)
+        
+        idx += 1 + n_verts
+        cell_idx += 1
 
-    # --- Vectorized face centers ---
-    # If all faces have the same number of vertices (common in hex meshes), use a single array op
-    if np.all(face_sizes == face_sizes[0]):
-        k = face_sizes[0]
-        flat_idx = np.concatenate(faces).reshape(-1, k)
-        face_centers = pts[flat_idx].mean(axis=1)        # (N_faces, 3) — fully vectorized
-    else:
-        # Mixed polyhedral: still faster than per-face np.mean with Python loop
-        flat_idx = np.concatenate(faces)
-        offsets   = np.concatenate([[0], np.cumsum(face_sizes)])
-        # Use reduceat for a single-pass summation
-        sums = np.add.reduceat(pts[flat_idx], offsets[:-1], axis=0)
-        face_centers = sums / face_sizes[:, None]
+    # --- Phase 3: Spatial Transformations & Angle Corrections ---
+    # Unroll rotation transformation matrices natively around local mesh origin
+    inv_theta = math.radians(270 - wind_deg)
+    cos_a, sin_a = np.cos(inv_theta), np.sin(inv_theta)
+    
+    x_unrot = cell_centers[:, 0] * cos_a - cell_centers[:, 1] * sin_a
+    y_unrot = cell_centers[:, 0] * sin_a + cell_centers[:, 1] * cos_a
 
-    # --- Fast cell center accumulation with np.bincount ---
-    all_cells  = np.concatenate([owner, neighbour])
-    all_fcenters = np.vstack([face_centers[np.arange(len(owner))],
-                               face_centers[np.arange(len(neighbour))]])
-    cell_cx = np.bincount(all_cells, weights=all_fcenters[:, 0], minlength=n_cells)
-    cell_cy = np.bincount(all_cells, weights=all_fcenters[:, 1], minlength=n_cells)
-    cell_cz = np.bincount(all_cells, weights=all_fcenters[:, 2], minlength=n_cells)
-    face_counts = np.bincount(all_cells, minlength=n_cells)
-
-    cell_coords = np.stack([cell_cx, cell_cy, cell_cz], axis=1) / face_counts[:, None]
-
+    # Resolve global anchor coordinate offset shifting
+    #if extent is not None:
     x_off = (extent[0] + extent[2]) / 2.0
     y_off = (extent[1] + extent[3]) / 2.0
-    
-    # Apply inverse rotation to simulation coordinates
-    rot_rad =  np.radians(270 - wind_deg)                       
-    theta = rot_rad
-    cos_i = np.cos(theta)
-    sin_i = np.sin(theta)
 
-    x_local_unrot = cell_coords[:, 0] * cos_i - cell_coords[:, 1] * sin_i
-    y_local_unrot = cell_coords[:, 0] * sin_i + cell_coords[:, 1] * cos_i
+    final_x = x_unrot + x_off
+    final_y = y_unrot + y_off
+    final_z = cell_centers[:, 2]
 
-    # 4. Transform back to UTM space by adding the original offsets
-    final_x = x_local_unrot + x_off
-    final_y = y_local_unrot + y_off
-    final_z = cell_coords[:, 2]
-
-    # 5. Rotate the Velocity Vectors back to UTM (North-up)
-    # Vectors only need the inverse rotation, no translation
-    u_final = u_field[:, 0] * cos_i - u_field[:, 1] * sin_i
-    v_final = u_field[:, 0] * sin_i + u_field[:, 1] * cos_i
-
-    # GIS alignment
-    cx_utm, cy_utm = gdf.geometry.x.mean(), gdf.geometry.y.mean()
-
-    # Spatial filter
-    dist_sq = (final_x - cx_utm)**2 + (final_y - cy_utm)**2
+    # --- Phase 4: Dynamic DataFrame Assembly & Masking ---
+    dist_sq = (final_x - x_off)**2 + (final_y - y_off)**2
     mask = dist_sq <= radius**2
     
-    df = pd.DataFrame({
-        'X': final_x[mask], 'Y': final_y[mask], 'Z': final_z[mask],
-        #'U': u_field[mask, 0], 
-        #'V': u_field[mask, 1],
-        'U': u_final[mask], 
-        'V': v_final[mask],
-        #'u_mag': np.linalg.norm(u_field[mask], axis=1)
-        #'u_mag': np.sqrt(u_final[mask]**2 + v_final[mask]**2+ u_field[mask, 2]**2)
-        'u_mag': np.sqrt(u_final[mask]**2 + v_final[mask]**2)
+    # Establish base data storage layout
+    df_dict = {
+        'X': final_x[mask],
+        'Y': final_y[mask],
+        'Z': final_z[mask]
+    }
+    
+    # Dynamically inject fields parsed from the file metadata
+    if 'U' in fields_dict:
+        u_raw = fields_dict['U']
+        # Realign raw simulation velocity vectors into geographic tracking directions
+        df_dict['U'] = (u_raw[:, 0] * cos_a - u_raw[:, 1] * sin_a)[mask]
+        df_dict['V'] = (u_raw[:, 0] * sin_a + u_raw[:, 1] * cos_a)[mask]
+        df_dict['u_mag'] = np.linalg.norm(u_raw, axis=1)[mask]
+    
+    if 'k' in fields_dict:
+        df_dict['k'] = fields_dict['k'][mask]
+        
+    # Append any remaining field arrays written into the source (e.g. p, nut, etc.)
+    for key, data in fields_dict.items():
+        if key not in ['U', 'k'] and len(data) == n_cells:
+            df_dict[key] = data[mask]
 
-    })
-    return df, cx_utm, cy_utm
+    df = pd.DataFrame(df_dict)
+    #print(f"Completed structural generation. Exported {len(df)} cells inside active bounds.\n")
+    
+    return df, x_off, y_off
 
     
 def plot_wind_analysis(ped_df, gdf, center_x_utm, center_y_utm, radius=400, title_suffix="xxxx"):
@@ -137,35 +167,38 @@ def plot_wind_analysis(ped_df, gdf, center_x_utm, center_y_utm, radius=400, titl
     Generates a side-by-side Velocity Magnitude and Vector Flow plot.
     center_coords: tuple (center_x_utm, center_y_utm)
     """
-    if len(ped_df) > 20000:
-        bins = 100
-    if len(ped_df) < 10000:
-        bins = 10
+    #if len(ped_df) > 20000:
+    #    bins = 100
+    #if len(ped_df) < 10000:
+    #    bins = 10
     
     # Create bins
-    ped_df['x_bin'] = (ped_df['X'] // bins) * bins
-    ped_df['y_bin'] = (ped_df['Y'] // bins) * bins
+    #ped_df['x_bin'] = (ped_df['X'] // bins) * bins
+    #ped_df['y_bin'] = (ped_df['Y'] // bins) * bins
 
     # Aggregate: Mean velocity per bin
-    binned_df = ped_df.groupby(['x_bin', 'y_bin']).agg({
-        'U': 'mean', 
-        'V': 'mean', 
-        'u_mag': 'mean'
-    }).reset_index()
+    #binned_df = ped_df.groupby(['x_bin', 'y_bin']).agg({
+    #    'U': 'mean', 
+    #    'V': 'mean', 
+    #    'u_mag': 'mean'
+    #}).reset_index()
     
     # 1. Setup the figure
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 9), sharey=True)
 
     # --- MAP A: Magnitude (Tricontour) ---
-    
-    cntr = ax1.tricontourf(binned_df['x_bin'], binned_df['y_bin'], binned_df['u_mag'],  levels=20, cmap='jet', alpha=0.7)
-    plt.scatter(gdf.geometry.x, gdf.geometry.y, marker='x', color='black', s=20, label='Turbines')
+    CNTRsampled_df = ped_df.iloc[::].copy()
+
+    #cntr = ax1.tricontourf(binned_df['x_bin'], binned_df['y_bin'], binned_df['u_mag'],  levels=20, cmap='jet', alpha=0.7)
+    cntr = ax1.tricontourf(CNTRsampled_df['X'], CNTRsampled_df['Y'], CNTRsampled_df['u_mag'], cmap='jet', alpha=0.6) #scale=120, alpha=0.9, width=0.003
+    ax1.scatter(gdf.geometry.x, gdf.geometry.y, marker='x', color='black', s=20)#, label='Turbines')
     ax1.set_title('A: Wind Velocity Magnitude (m/s)', loc='left', pad=15, weight='bold')
 
     # --- MAP B: Flow (Quiver) ---
-    
+    QUIVsampled_df = ped_df.iloc[::20].copy()
     # Plot binned_df instead of the raw xx rows
-    qv = ax2.quiver(binned_df['x_bin'], binned_df['y_bin'], binned_df['U'], binned_df['V'], binned_df['u_mag'], cmap='jet', scale=120, alpha=0.9, width=0.003)    
+    #qv = ax2.quiver(binned_df['x_bin'], binned_df['y_bin'], binned_df['U'], binned_df['V'], binned_df['u_mag'], cmap='jet', scale=120, alpha=0.9, width=0.003)  
+    qv = ax2.quiver(QUIVsampled_df['X'], QUIVsampled_df['Y'], QUIVsampled_df['U'], QUIVsampled_df['V'], QUIVsampled_df['u_mag'], cmap='jet', scale=120, alpha=0.9, width=0.003)
     plt.scatter(gdf.geometry.x, gdf.geometry.y, marker='x', color='black', s=20, label='Turbines')
 
     # --- ADD LABELS TO THE MASTS ON AX2 ---

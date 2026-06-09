@@ -13,6 +13,174 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+turbine1
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource1;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (417.24 2745.26 161.93);
+}
+turbine2
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource2;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (698.45 2583.63 164.87);
+}
+turbine3
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource3;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (976.89 2417.61 167.22);
+}
+turbine4
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource4;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (1281.14 2253.57 170.69);
+}
+turbine5
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource5;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (1554.28 2024.60 176.13);
+}
+turbine6
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource6;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (1844.78 1825.09 184.58);
+}
+turbine7
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource7;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (248.18 2048.81 162.58);
+}
+turbine8
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource8;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (547.73 1865.68 164.37);
+}
+turbine9
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource9;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (850.82 1690.09 168.82);
+}
+turbine10
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource10;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (1152.76 1502.95 177.70);
+}
+turbine11
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource11;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (1424.20 1294.68 192.21);
+}
+turbine12
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource12;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-857.33 2112.37 166.54);
+}
+turbine13
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource13;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-574.96 1948.78 162.47);
+}
+turbine14
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource14;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-291.03 1791.54 163.07);
+}
 turbine15
 {
     type            actuationDiskSource;
@@ -23,7 +191,43 @@ turbine15
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (278.85 1209.40 166.41);
+    upstreamPoint   (278.73 1209.48 166.41);
+}
+turbine16
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource16;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (602.09 1027.12 172.76);
+}
+turbine17
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource17;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1055.89 1357.49 164.51);
+}
+turbine18
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource18;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-678.25 1107.51 164.77);
 }
 turbine19
 {
@@ -35,7 +239,7 @@ turbine19
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (-347.07 880.91 164.64);
+    upstreamPoint   (-347.18 880.99 164.64);
 }
 turbine20
 {
@@ -47,7 +251,7 @@ turbine20
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (264.26 413.50 171.12);
+    upstreamPoint   (264.15 413.58 171.12);
 }
 turbine21
 {
@@ -59,7 +263,31 @@ turbine21
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (580.45 229.53 179.38);
+    upstreamPoint   (580.33 229.62 179.38);
+}
+turbine22
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource22;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (1381.96 55.94 201.64);
+}
+turbine23
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource23;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (1065.40 231.56 191.73);
 }
 turbine24
 {
@@ -71,7 +299,7 @@ turbine24
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (-1215.29 506.80 170.09);
+    upstreamPoint   (-1215.40 506.88 170.00);
 }
 turbine25
 {
@@ -83,7 +311,7 @@ turbine25
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (-888.96 209.70 171.82);
+    upstreamPoint   (-889.07 209.78 171.82);
 }
 turbine26
 {
@@ -95,7 +323,7 @@ turbine26
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (-526.20 49.07 167.86);
+    upstreamPoint   (-526.31 49.15 167.86);
 }
 turbine27
 {
@@ -107,7 +335,7 @@ turbine27
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (23.63 -256.48 172.44);
+    upstreamPoint   (23.52 -256.39 171.92);
 }
 turbine28
 {
@@ -119,7 +347,7 @@ turbine28
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (354.56 -486.44 179.67);
+    upstreamPoint   (354.44 -486.36 179.67);
 }
 turbine29
 {
@@ -131,7 +359,43 @@ turbine29
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (706.88 -653.43 186.19);
+    upstreamPoint   (706.76 -653.35 186.19);
+}
+turbine30
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource30;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (1057.02 -828.75 198.20);
+}
+turbine31
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource31;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1472.54 -208.74 173.75);
+}
+turbine32
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource32;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1073.94 -428.85 169.72);
 }
 turbine33
 {
@@ -143,7 +407,7 @@ turbine33
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (-743.12 -611.27 169.73);
+    upstreamPoint   (-743.23 -611.19 168.93);
 }
 turbine34
 {
@@ -155,5 +419,149 @@ turbine34
     Cp              0.44;
     Ct              0.75;
     diskArea        7853.982;
-    upstreamPoint   (-235.33 -894.42 182.89);
+    upstreamPoint   (-235.44 -894.34 181.75);
+}
+turbine35
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource35;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (101.50 -1063.41 185.24);
+}
+turbine36
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource36;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (410.71 -1284.99 200.04);
+}
+turbine37
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource37;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1786.64 -829.83 171.70);
+}
+turbine38
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource38;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1476.22 -1010.05 172.29);
+}
+turbine39
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource39;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1138.21 -1192.73 172.05);
+}
+turbine40
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource40;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-827.06 -1382.07 172.66);
+}
+turbine41
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource41;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-289.38 -1640.05 183.67);
+}
+turbine42
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource42;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-2081.82 -1470.47 178.61);
+}
+turbine43
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource43;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1807.82 -1629.69 175.02);
+}
+turbine44
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource44;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1499.58 -1794.52 173.83);
+}
+turbine45
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource45;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-1187.44 -1973.71 174.33);
+}
+turbine46
+{
+    type            actuationDiskSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        actuationDiskSource46;
+    diskDir         (1 0 0);
+    Cp              0.44;
+    Ct              0.75;
+    diskArea        7853.982;
+    upstreamPoint   (-772.09 -2209.97 181.94);
 }

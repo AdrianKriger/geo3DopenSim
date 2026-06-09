@@ -17,77 +17,281 @@ snap true;
 addLayers false;
 mergeTolerance 1e-6;
 geometry { terrain { type triSurfaceMesh; file "terrain.obj"; } 
+refinementBox1
+{
+    type box;
+    min (317.24 2495.26 11.93);
+    max (817.24 2995.26 361.93);
+}
+refinementBox2
+{
+    type box;
+    min (598.45 2333.63 14.87);
+    max (1098.45 2833.63 364.87);
+}
+refinementBox3
+{
+    type box;
+    min (876.89 2167.61 17.22);
+    max (1376.89 2667.61 367.22);
+}
+refinementBox4
+{
+    type box;
+    min (1181.14 2003.57 20.69);
+    max (1681.14 2503.57 370.69);
+}
+refinementBox5
+{
+    type box;
+    min (1454.28 1774.60 26.13);
+    max (1954.28 2274.60 376.13);
+}
+refinementBox6
+{
+    type box;
+    min (1744.78 1575.09 34.58);
+    max (2244.78 2075.09 384.58);
+}
+refinementBox7
+{
+    type box;
+    min (148.18 1798.81 12.58);
+    max (648.18 2298.81 362.58);
+}
+refinementBox8
+{
+    type box;
+    min (447.73 1615.68 14.37);
+    max (947.73 2115.68 364.37);
+}
+refinementBox9
+{
+    type box;
+    min (750.82 1440.09 18.82);
+    max (1250.82 1940.09 368.82);
+}
+refinementBox10
+{
+    type box;
+    min (1052.76 1252.95 27.70);
+    max (1552.76 1752.95 377.70);
+}
+refinementBox11
+{
+    type box;
+    min (1324.20 1044.68 42.21);
+    max (1824.20 1544.68 392.21);
+}
+refinementBox12
+{
+    type box;
+    min (-957.33 1862.37 16.54);
+    max (-457.33 2362.37 366.54);
+}
+refinementBox13
+{
+    type box;
+    min (-674.96 1698.78 12.47);
+    max (-174.96 2198.78 362.47);
+}
+refinementBox14
+{
+    type box;
+    min (-391.03 1541.54 13.07);
+    max (108.97 2041.54 363.07);
+}
 refinementBox15
 {
     type box;
-    min (178.85 959.40 16.41);
-    max (1028.85 1459.40 366.41);
+    min (178.73 959.48 16.41);
+    max (678.73 1459.48 366.41);
+}
+refinementBox16
+{
+    type box;
+    min (502.09 777.12 22.76);
+    max (1002.09 1277.12 372.76);
+}
+refinementBox17
+{
+    type box;
+    min (-1155.89 1107.49 14.51);
+    max (-655.89 1607.49 364.51);
+}
+refinementBox18
+{
+    type box;
+    min (-778.25 857.51 14.77);
+    max (-278.25 1357.51 364.77);
 }
 refinementBox19
 {
     type box;
-    min (-447.07 630.91 14.64);
-    max (402.93 1130.91 364.64);
+    min (-447.18 630.99 14.64);
+    max (52.82 1130.99 364.64);
 }
 refinementBox20
 {
     type box;
-    min (164.26 163.50 21.12);
-    max (1014.26 663.50 371.12);
+    min (164.15 163.58 21.12);
+    max (664.15 663.58 371.12);
 }
 refinementBox21
 {
     type box;
-    min (480.45 -20.47 29.38);
-    max (1330.45 479.53 379.38);
+    min (480.33 -20.38 29.38);
+    max (980.33 479.62 379.38);
+}
+refinementBox22
+{
+    type box;
+    min (1281.96 -194.06 51.64);
+    max (1781.96 305.94 401.64);
+}
+refinementBox23
+{
+    type box;
+    min (965.40 -18.44 41.73);
+    max (1465.40 481.56 391.73);
 }
 refinementBox24
 {
     type box;
-    min (-1315.29 256.80 20.09);
-    max (-465.29 756.80 370.09);
+    min (-1315.40 256.88 20.00);
+    max (-815.40 756.88 370.00);
 }
 refinementBox25
 {
     type box;
-    min (-988.96 -40.30 21.82);
-    max (-138.96 459.70 371.82);
+    min (-989.07 -40.22 21.82);
+    max (-489.07 459.78 371.82);
 }
 refinementBox26
 {
     type box;
-    min (-626.20 -200.93 17.86);
-    max (223.80 299.07 367.86);
+    min (-626.31 -200.85 17.86);
+    max (-126.31 299.15 367.86);
 }
 refinementBox27
 {
     type box;
-    min (-76.37 -506.48 22.44);
-    max (773.63 -6.48 372.44);
+    min (-76.48 -506.39 21.92);
+    max (423.52 -6.39 371.92);
 }
 refinementBox28
 {
     type box;
-    min (254.56 -736.44 29.67);
-    max (1104.56 -236.44 379.67);
+    min (254.44 -736.36 29.67);
+    max (754.44 -236.36 379.67);
 }
 refinementBox29
 {
     type box;
-    min (606.88 -903.43 36.19);
-    max (1456.88 -403.43 386.19);
+    min (606.76 -903.35 36.19);
+    max (1106.76 -403.35 386.19);
+}
+refinementBox30
+{
+    type box;
+    min (957.02 -1078.75 48.20);
+    max (1457.02 -578.75 398.20);
+}
+refinementBox31
+{
+    type box;
+    min (-1572.54 -458.74 23.75);
+    max (-1072.54 41.26 373.75);
+}
+refinementBox32
+{
+    type box;
+    min (-1173.94 -678.85 19.72);
+    max (-673.94 -178.85 369.72);
 }
 refinementBox33
 {
     type box;
-    min (-843.12 -861.27 19.73);
-    max (6.88 -361.27 369.73);
+    min (-843.23 -861.19 18.93);
+    max (-343.23 -361.19 368.93);
 }
 refinementBox34
 {
     type box;
-    min (-335.33 -1144.42 32.89);
-    max (514.67 -644.42 382.89);
+    min (-335.44 -1144.34 31.75);
+    max (164.56 -644.34 381.75);
+}
+refinementBox35
+{
+    type box;
+    min (1.50 -1313.41 35.24);
+    max (501.50 -813.41 385.24);
+}
+refinementBox36
+{
+    type box;
+    min (310.71 -1534.99 50.04);
+    max (810.71 -1034.99 400.04);
+}
+refinementBox37
+{
+    type box;
+    min (-1886.64 -1079.83 21.70);
+    max (-1386.64 -579.83 371.70);
+}
+refinementBox38
+{
+    type box;
+    min (-1576.22 -1260.05 22.29);
+    max (-1076.22 -760.05 372.29);
+}
+refinementBox39
+{
+    type box;
+    min (-1238.21 -1442.73 22.05);
+    max (-738.21 -942.73 372.05);
+}
+refinementBox40
+{
+    type box;
+    min (-927.06 -1632.07 22.66);
+    max (-427.06 -1132.07 372.66);
+}
+refinementBox41
+{
+    type box;
+    min (-389.38 -1890.05 33.67);
+    max (110.62 -1390.05 383.67);
+}
+refinementBox42
+{
+    type box;
+    min (-2181.82 -1720.47 28.61);
+    max (-1681.82 -1220.47 378.61);
+}
+refinementBox43
+{
+    type box;
+    min (-1907.82 -1879.69 25.02);
+    max (-1407.82 -1379.69 375.02);
+}
+refinementBox44
+{
+    type box;
+    min (-1599.58 -2044.52 23.83);
+    max (-1099.58 -1544.52 373.83);
+}
+refinementBox45
+{
+    type box;
+    min (-1287.44 -2223.71 24.33);
+    max (-787.44 -1723.71 374.33);
+}
+refinementBox46
+{
+    type box;
+    min (-872.09 -2459.97 31.94);
+    max (-372.09 -1959.97 381.94);
 } }
 castellatedMeshControls
 {
@@ -101,19 +305,53 @@ castellatedMeshControls
     features ();
     refinementSurfaces { terrain { level (1 2); patchInfo { type wall; } } }
     refinementRegions { 
-        refinementBox15 { mode inside; levels ((3 3)); }
-        refinementBox19 { mode inside; levels ((3 3)); }
-        refinementBox20 { mode inside; levels ((3 3)); }
-        refinementBox21 { mode inside; levels ((3 3)); }
-        refinementBox24 { mode inside; levels ((3 3)); }
-        refinementBox25 { mode inside; levels ((3 3)); }
-        refinementBox26 { mode inside; levels ((3 3)); }
-        refinementBox27 { mode inside; levels ((3 3)); }
-        refinementBox28 { mode inside; levels ((3 3)); }
-        refinementBox29 { mode inside; levels ((3 3)); }
-        refinementBox33 { mode inside; levels ((3 3)); }
-        refinementBox34 { mode inside; levels ((3 3)); } }
-    insidePoint (4.39 49.74 564.64); 
+        refinementBox1 { mode inside; levels ((1.0 2)); }
+        refinementBox2 { mode inside; levels ((1.0 2)); }
+        refinementBox3 { mode inside; levels ((1.0 2)); }
+        refinementBox4 { mode inside; levels ((1.0 2)); }
+        refinementBox5 { mode inside; levels ((1.0 2)); }
+        refinementBox6 { mode inside; levels ((1.0 2)); }
+        refinementBox7 { mode inside; levels ((1.0 2)); }
+        refinementBox8 { mode inside; levels ((1.0 2)); }
+        refinementBox9 { mode inside; levels ((1.0 2)); }
+        refinementBox10 { mode inside; levels ((1.0 2)); }
+        refinementBox11 { mode inside; levels ((1.0 2)); }
+        refinementBox12 { mode inside; levels ((1.0 2)); }
+        refinementBox13 { mode inside; levels ((1.0 2)); }
+        refinementBox14 { mode inside; levels ((1.0 2)); }
+        refinementBox15 { mode inside; levels ((1.0 2)); }
+        refinementBox16 { mode inside; levels ((1.0 2)); }
+        refinementBox17 { mode inside; levels ((1.0 2)); }
+        refinementBox18 { mode inside; levels ((1.0 2)); }
+        refinementBox19 { mode inside; levels ((1.0 2)); }
+        refinementBox20 { mode inside; levels ((1.0 2)); }
+        refinementBox21 { mode inside; levels ((1.0 2)); }
+        refinementBox22 { mode inside; levels ((1.0 2)); }
+        refinementBox23 { mode inside; levels ((1.0 2)); }
+        refinementBox24 { mode inside; levels ((1.0 2)); }
+        refinementBox25 { mode inside; levels ((1.0 2)); }
+        refinementBox26 { mode inside; levels ((1.0 2)); }
+        refinementBox27 { mode inside; levels ((1.0 2)); }
+        refinementBox28 { mode inside; levels ((1.0 2)); }
+        refinementBox29 { mode inside; levels ((1.0 2)); }
+        refinementBox30 { mode inside; levels ((1.0 2)); }
+        refinementBox31 { mode inside; levels ((1.0 2)); }
+        refinementBox32 { mode inside; levels ((1.0 2)); }
+        refinementBox33 { mode inside; levels ((1.0 2)); }
+        refinementBox34 { mode inside; levels ((1.0 2)); }
+        refinementBox35 { mode inside; levels ((1.0 2)); }
+        refinementBox36 { mode inside; levels ((1.0 2)); }
+        refinementBox37 { mode inside; levels ((1.0 2)); }
+        refinementBox38 { mode inside; levels ((1.0 2)); }
+        refinementBox39 { mode inside; levels ((1.0 2)); }
+        refinementBox40 { mode inside; levels ((1.0 2)); }
+        refinementBox41 { mode inside; levels ((1.0 2)); }
+        refinementBox42 { mode inside; levels ((1.0 2)); }
+        refinementBox43 { mode inside; levels ((1.0 2)); }
+        refinementBox44 { mode inside; levels ((1.0 2)); }
+        refinementBox45 { mode inside; levels ((1.0 2)); }
+        refinementBox46 { mode inside; levels ((1.0 2)); } }
+    insidePoint (41.22 294.22 541.86); 
 }
 snapControls { nSmoothPatch 5; tolerance 2.0; nSolveIter 100; nRelaxIter 8; }
 meshQualityControls { 

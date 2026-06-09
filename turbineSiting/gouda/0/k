@@ -20,11 +20,11 @@ boundaryField
     {
         type            atmBoundaryLayerInletK;
         Uref            6.9;
-        Zref            84.63999938964844;
+        Zref            61.86000061035156;
         zDir            (0 0 1);
         flowDir         (1 0 0);
         z0              uniform 0.1;
-        zGround         uniform 64.63999938964844;
+        zGround         uniform 41.86000061035156;
         value           $internalField;
     }
     outlet
