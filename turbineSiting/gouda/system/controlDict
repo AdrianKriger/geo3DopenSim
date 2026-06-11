@@ -48,28 +48,6 @@ functions
                 topology        proximityRegions; 
                 absProximity    103;          
             }
-            turbine60
-            {
-                type            distanceSurface;
-            	surfaceType     triSurface;
-            	file	        "terrain.obj";
-                distance        60.0;    
-             	signed          false;
-		
-                topology        proximityRegions; 
-                absProximity    63.0;          
-            }
-            turbine150
-            {
-                type            distanceSurface;
-            	surfaceType     triSurface;
-            	file	        "terrain.obj";
-                distance        150.0;    
-             	signed          false;
-		
-                topology        proximityRegions; 
-                absProximity    153.0;          
-            }
         }
     }
 }

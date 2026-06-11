@@ -15,6 +15,8 @@ checkMesh | tee checkMesh_$(date +%Y%m%d_%H%M).log
 topoSet
 checkMesh | tee checkMesh_$(date +%Y%m%d_%H%M).log
 foamRun -solver incompressibleFluid | tee foamRun_$(date +%Y%m%d_%H%M).log
+
+#- create hubHeight.vtk surface. will be in postProcessing folder
 foamPostProcess -time 1000:
 ```
 

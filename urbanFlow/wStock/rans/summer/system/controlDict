@@ -25,3 +25,48 @@ writeFormat     ascii;
 writePrecision  6;
 runTimeModifiable true;
 libs ("libatmosphericModels.so");
+functions
+{
+    surfacesVTK
+    {
+        type            surfaces;
+        libs            ("libsampling.so");
+        writeControl    writeTime;
+        writeInterval   1000;  
+        surfaceFormat   vtk;
+    	interpolationScheme cell;
+        
+        // This ensures OpenFOAM tracks fields on the modified geometry
+        fields          ( U k ); 
+
+        surfaces
+        {
+            pedestrianZone
+	    {
+                type            cuttingPlane;
+                planeType       pointAndNormal;
+                pointAndNormalDict
+                {
+                    point       (0 0 1.5);
+                    normal      (0 0 1);
+                }
+                signed          false;
+                topology        proximityRegions; 
+                absProximity    1.8;          
+            }
+            uticZone
+            {
+                type            cuttingPlane;
+                planeType       pointAndNormal;
+                pointAndNormalDict
+                {
+                    point       (0 0 10.0);
+                    normal      (0 0 1);
+                }
+                signed          false;
+                topology        proximityRegions; 
+                absProximity    11.0;          
+            }
+        }
+    }
+}

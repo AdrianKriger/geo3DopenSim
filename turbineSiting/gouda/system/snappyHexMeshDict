@@ -16,7 +16,14 @@ castellatedMesh true;
 snap true;
 addLayers false;
 mergeTolerance 1e-6;
-geometry { terrain { type triSurfaceMesh; file "terrain.obj"; } 
+geometry { terrain { type triSurfaceMesh; file "terrain.obj"; }
+    
+    hubHeightZone
+    {
+    type box;
+    min (-2131.82 -2409.97 151.93);
+    max (2194.78 2945.26 211.64);
+    }
 refinementBox1
 {
     type box;
@@ -305,6 +312,7 @@ castellatedMeshControls
     features ();
     refinementSurfaces { terrain { level (1 2); patchInfo { type wall; } } }
     refinementRegions { 
+    hubHeightZone { mode inside; levels ((1 2)); }
         refinementBox1 { mode inside; levels ((1.0 2)); }
         refinementBox2 { mode inside; levels ((1.0 2)); }
         refinementBox3 { mode inside; levels ((1.0 2)); }
