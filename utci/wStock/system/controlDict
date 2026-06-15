@@ -1,0 +1,54 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+solver incompressibleFluid;
+startFrom latestTime;
+stopAt endTime;
+endTime 700;
+deltaT 1;
+writeInterval 100;
+purgeWrite 2;
+writeFormat ascii;
+libs
+( "libatmosphericModels.so" "libfvModels.so" );
+functions
+{
+    surfacesVTK
+    {
+        type            surfaces;
+        libs            ("libsampling.so");
+        writeControl    writeTime;
+        writeInterval   700;  
+        surfaceFormat   vtk;
+    	interpolationScheme cell;
+        
+        // This ensures OpenFOAM tracks fields on the modified geometry
+        fields          ( U k ); 
+
+        surfaces
+        {
+            pedestrianZone
+            {
+                type            distanceSurface;
+            	surfaceType     triSurface;
+            	file	        "scene_no_buildings.obj";
+                distance        1.5;    
+             	signed          false;
+		
+                topology        proximityRegions; 
+                absProximity    1.8;          
+            }
+        }
+    }
+}

@@ -1,0 +1,699 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      snappyHexMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+castellatedMesh true;
+snap true;
+addLayers false;
+mergeTolerance 1e-6;
+
+geometry
+{
+    scene
+    {
+        type triSurfaceMesh;
+        file "scene.obj";
+        regions
+        {
+            terrain    { name terrain; }
+            roads      { name roads; }
+            recreation { name recreation; }
+            buildings  { name buildings; }
+        }
+    }
+    
+    refinementBox
+    {
+        type box;
+        min (-500.00 -500.00 -39.54);
+        max (500.00 500.00 182.44);
+    }
+    pedestrianZone
+    {
+        type box;
+        min (-400.00 -400.00 -39.54);
+        max (400.00 400.00 85.46);
+    }         
+        canopyGeometry_1
+        {
+        type searchableCylinder;
+        point1 (-178.54 90.90 15.17);
+        point2 (-178.54 90.90 21.85);
+        radius 6.50;
+        }         
+        canopyGeometry_2
+        {
+        type searchableCylinder;
+        point1 (-353.75 26.11 26.79);
+        point2 (-353.75 26.11 33.47);
+        radius 6.50;
+        }         
+        canopyGeometry_3
+        {
+        type searchableCylinder;
+        point1 (-318.22 52.08 25.32);
+        point2 (-318.22 52.08 30.78);
+        radius 6.50;
+        }         
+        canopyGeometry_4
+        {
+        type searchableCylinder;
+        point1 (-327.57 68.87 26.56);
+        point2 (-327.57 68.87 32.04);
+        radius 6.50;
+        }         
+        canopyGeometry_5
+        {
+        type searchableCylinder;
+        point1 (-285.53 91.27 23.56);
+        point2 (-285.53 91.27 28.98);
+        radius 6.50;
+        }         
+        canopyGeometry_6
+        {
+        type searchableCylinder;
+        point1 (-279.42 77.72 22.26);
+        point2 (-279.42 77.72 27.70);
+        radius 6.50;
+        }         
+        canopyGeometry_7
+        {
+        type searchableCylinder;
+        point1 (-272.41 64.70 23.49);
+        point2 (-272.41 64.70 28.87);
+        radius 6.50;
+        }         
+        canopyGeometry_8
+        {
+        type searchableCylinder;
+        point1 (-256.46 36.19 23.57);
+        point2 (-256.46 36.19 28.97);
+        radius 6.50;
+        }         
+        canopyGeometry_9
+        {
+        type searchableCylinder;
+        point1 (-248.18 20.66 23.56);
+        point2 (-248.18 20.66 29.00);
+        radius 6.50;
+        }         
+        canopyGeometry_10
+        {
+        type searchableCylinder;
+        point1 (-272.02 119.77 19.19);
+        point2 (-272.02 119.77 26.03);
+        radius 6.50;
+        }         
+        canopyGeometry_12
+        {
+        type searchableCylinder;
+        point1 (-267.14 102.17 21.06);
+        point2 (-267.14 102.17 27.90);
+        radius 6.50;
+        }         
+        canopyGeometry_11
+        {
+        type searchableCylinder;
+        point1 (-258.61 80.25 21.04);
+        point2 (-258.61 80.25 27.80);
+        radius 6.50;
+        }         
+        canopyGeometry_13
+        {
+        type searchableCylinder;
+        point1 (-164.19 104.26 15.19);
+        point2 (-164.19 104.26 21.95);
+        radius 6.50;
+        }         
+        canopyGeometry_14
+        {
+        type searchableCylinder;
+        point1 (-151.43 117.13 13.48);
+        point2 (-151.43 117.13 20.00);
+        radius 6.50;
+        }         
+        canopyGeometry_15
+        {
+        type searchableCylinder;
+        point1 (-147.59 63.59 14.63);
+        point2 (-147.59 63.59 21.47);
+        radius 6.50;
+        }         
+        canopyGeometry_16
+        {
+        type searchableCylinder;
+        point1 (-135.17 74.66 14.63);
+        point2 (-135.17 74.66 21.47);
+        radius 6.50;
+        }         
+        canopyGeometry_17
+        {
+        type searchableCylinder;
+        point1 (-120.40 83.65 12.83);
+        point2 (-120.40 83.65 18.55);
+        radius 6.50;
+        }         
+        canopyGeometry_18
+        {
+        type searchableCylinder;
+        point1 (-127.92 112.57 13.50);
+        point2 (-127.92 112.57 20.10);
+        radius 6.50;
+        }         
+        canopyGeometry_20
+        {
+        type searchableCylinder;
+        point1 (-113.83 119.56 12.36);
+        point2 (-113.83 119.56 19.20);
+        radius 6.50;
+        }         
+        canopyGeometry_19
+        {
+        type searchableCylinder;
+        point1 (-99.20 93.82 11.96);
+        point2 (-99.20 93.82 18.64);
+        radius 6.50;
+        }         
+        canopyGeometry_22
+        {
+        type searchableCylinder;
+        point1 (-208.85 161.75 16.62);
+        point2 (-208.85 161.75 23.46);
+        radius 6.50;
+        }         
+        canopyGeometry_21
+        {
+        type searchableCylinder;
+        point1 (-197.16 170.10 14.92);
+        point2 (-197.16 170.10 21.84);
+        radius 6.50;
+        }         
+        canopyGeometry_24
+        {
+        type searchableCylinder;
+        point1 (-185.09 176.61 14.03);
+        point2 (-185.09 176.61 20.79);
+        radius 6.50;
+        }         
+        canopyGeometry_23
+        {
+        type searchableCylinder;
+        point1 (-171.93 182.83 13.94);
+        point2 (-171.93 182.83 20.70);
+        radius 6.50;
+        }         
+        canopyGeometry_25
+        {
+        type searchableCylinder;
+        point1 (-161.38 192.37 13.04);
+        point2 (-161.38 192.37 19.88);
+        radius 6.50;
+        }         
+        canopyGeometry_27
+        {
+        type searchableCylinder;
+        point1 (-148.64 161.18 13.00);
+        point2 (-148.64 161.18 19.84);
+        radius 6.50;
+        }         
+        canopyGeometry_26
+        {
+        type searchableCylinder;
+        point1 (-121.08 142.45 12.30);
+        point2 (-121.08 142.45 18.90);
+        radius 6.50;
+        }         
+        canopyGeometry_28
+        {
+        type searchableCylinder;
+        point1 (-138.86 143.43 13.50);
+        point2 (-138.86 143.43 20.10);
+        radius 6.50;
+        }         
+        canopyGeometry_29
+        {
+        type searchableCylinder;
+        point1 (-90.16 110.75 11.14);
+        point2 (-90.16 110.75 17.82);
+        radius 6.50;
+        }         
+        canopyGeometry_30
+        {
+        type searchableCylinder;
+        point1 (-114.67 216.80 10.76);
+        point2 (-114.67 216.80 18.24);
+        radius 6.50;
+        }         
+        canopyGeometry_31
+        {
+        type searchableCylinder;
+        point1 (-53.56 107.96 10.26);
+        point2 (-53.56 107.96 17.78);
+        radius 6.50;
+        }         
+        canopyGeometry_32
+        {
+        type searchableCylinder;
+        point1 (-73.85 148.39 10.38);
+        point2 (-73.85 148.39 17.70);
+        radius 6.50;
+        }         
+        canopyGeometry_33
+        {
+        type searchableCylinder;
+        point1 (-101.43 202.37 10.66);
+        point2 (-101.43 202.37 18.22);
+        radius 6.50;
+        }         
+        canopyGeometry_34
+        {
+        type searchableCylinder;
+        point1 (-90.84 181.82 10.60);
+        point2 (-90.84 181.82 17.92);
+        radius 6.50;
+        }         
+        canopyGeometry_35
+        {
+        type searchableCylinder;
+        point1 (-98.75 161.01 10.50);
+        point2 (-98.75 161.01 17.98);
+        radius 6.50;
+        }         
+        canopyGeometry_36
+        {
+        type searchableCylinder;
+        point1 (-119.07 162.11 11.82);
+        point2 (-119.07 162.11 19.06);
+        radius 6.50;
+        }         
+        canopyGeometry_37
+        {
+        type searchableCylinder;
+        point1 (-20.01 -256.42 12.29);
+        point2 (-20.01 -256.42 18.81);
+        radius 6.50;
+        }         
+        canopyGeometry_38
+        {
+        type searchableCylinder;
+        point1 (-47.61 -245.03 13.35);
+        point2 (-47.61 -245.03 20.03);
+        radius 6.50;
+        }         
+        canopyGeometry_39
+        {
+        type searchableCylinder;
+        point1 (-33.70 -209.10 12.12);
+        point2 (-33.70 -209.10 19.68);
+        radius 6.50;
+        }         
+        canopyGeometry_40
+        {
+        type searchableCylinder;
+        point1 (271.56 -176.53 4.65);
+        point2 (271.56 -176.53 12.29);
+        radius 6.50;
+        }         
+        canopyGeometry_41
+        {
+        type searchableCylinder;
+        point1 (310.71 -178.71 5.90);
+        point2 (310.71 -178.71 11.54);
+        radius 6.50;
+        }         
+        canopyGeometry_42
+        {
+        type searchableCylinder;
+        point1 (300.40 -159.42 5.78);
+        point2 (300.40 -159.42 11.40);
+        radius 6.50;
+        }         
+        canopyGeometry_43
+        {
+        type searchableCylinder;
+        point1 (292.65 -189.33 6.43);
+        point2 (292.65 -189.33 12.03);
+        radius 6.50;
+        }
+}
+
+castellatedMeshControls
+{
+    // maxLocalCells 4500000;
+    // maxGlobalCells 18000000;
+    minRefinementCells  10;
+    nCellsBetweenLevels 2;
+    resolveFeatureAngle 35;
+    allowFreeStandingZoneFaces true;
+    
+    features ();
+    
+    refinementSurfaces
+    {
+        scene
+        {
+            level (1 2);
+            regions
+            {
+                terrain    { level (1 2); patchInfo { type wall; } }
+                roads      { level (1 2); patchInfo { type wall; } }
+                recreation { level (1 2); patchInfo { type wall; } }
+                buildings  { level (2 3); patchInfo { type wall; } }
+            }
+        }
+    }
+    
+    refinementRegions
+    {
+                refinementBox    { mode inside; level 2; }
+        pedestrianZone   { mode inside; level 2; }
+        
+        canopyGeometry_1
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_1;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_2
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_2;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_3
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_3;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_4
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_4;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_5
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_5;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_6
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_6;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_7
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_7;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_8
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_8;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_9
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_9;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_10
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_10;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_12
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_12;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_11
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_11;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_13
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_13;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_14
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_14;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_15
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_15;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_16
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_16;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_17
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_17;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_18
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_18;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_20
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_20;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_19
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_19;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_22
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_22;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_21
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_21;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_24
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_24;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_23
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_23;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_25
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_25;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_27
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_27;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_26
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_26;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_28
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_28;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_29
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_29;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_30
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_30;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_31
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_31;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_32
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_32;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_33
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_33;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_34
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_34;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_35
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_35;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_36
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_36;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_37
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_37;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_38
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_38;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_39
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_39;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_40
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_40;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_41
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_41;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_42
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_42;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }        
+        canopyGeometry_43
+        {
+            mode inside;
+            levels ((0 0)); 
+            cellZone canopyZone_43;
+            cellZoneInside inside; // Explicitly forces cells inside to hold the zone tag
+        }
+    }
+    
+    locationInMesh (-7.242068704726989e-07 -0.0003366893912470914 364.89);
+}
+
+snapControls { nSmoothPatch 5; tolerance 1.0; nSolveIter 100; nRelaxIter 5; }
+
+meshQualityControls { 
+    #include "meshQualityDict"
+    maxNonOrtho 75;
+    maxBoundarySkewness 8;
+    maxInternalSkewness 5;
+    maxConcave 75;
+    minVol 1e-12;
+    nSmoothScale 8;
+    errorReduction 0.75;
+    nRelaxIter 8;
+}

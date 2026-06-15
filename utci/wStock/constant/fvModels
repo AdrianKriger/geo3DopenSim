@@ -1,0 +1,1176 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      fvModels;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+canopySource_1
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_1;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_2
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_2;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_3
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_3;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_4
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_4;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_5
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_5;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_6
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_6;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_7
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_7;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_8
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_8;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_9
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_9;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_10
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_10;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_12
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_12;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_11
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_11;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_13
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_13;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_14
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_14;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_15
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_15;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_16
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_16;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_17
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_17;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_18
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_18;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_20
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_20;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_19
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_19;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_22
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_22;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_21
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_21;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_24
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_24;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_23
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_23;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_25
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_25;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_27
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_27;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_26
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_26;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_28
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_28;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_29
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_29;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_30
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_30;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_31
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_31;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_32
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_32;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_33
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_33;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_34
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_34;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_35
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_35;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_36
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_36;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_37
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_37;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_38
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_38;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_39
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_39;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_40
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_40;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -2.1600;
+        }
+        k
+        {
+            explicit      111.9744;
+            implicit      -8.6400;
+        }
+        epsilon
+        {
+            explicit      25.1942;
+            implicit      -12.9600;
+        }
+    }
+}
+canopySource_41
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_41;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_42
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_42;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}
+canopySource_43
+{
+    type            semiImplicitSource;
+    active          yes;
+    selectionMode   cellZone;
+    cellZone        canopyZone_43;
+    volumeMode      specific;
+
+    sources
+    {
+        U
+        {
+            explicit      (0 0 0);
+            implicit      -4.5000;
+        }
+        k
+        {
+            explicit      233.2800;
+            implicit      -18.0000;
+        }
+        epsilon
+        {
+            explicit      52.4880;
+            implicit      -27.0000;
+        }
+    }
+}

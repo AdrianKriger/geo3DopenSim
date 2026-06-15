@@ -1,0 +1,706 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  13
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+actions
+(
+
+    {
+        name    canopyZone_1;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-178.54 90.90 15.67);
+        p2      (-178.54 90.90 21.35);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_1;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_1;
+    }
+    {
+        name    canopyZone_2;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-353.75 26.11 27.29);
+        p2      (-353.75 26.11 32.97);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_2;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_2;
+    }
+    {
+        name    canopyZone_3;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-318.22 52.08 25.82);
+        p2      (-318.22 52.08 30.28);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_3;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_3;
+    }
+    {
+        name    canopyZone_4;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-327.57 68.87 27.06);
+        p2      (-327.57 68.87 31.54);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_4;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_4;
+    }
+    {
+        name    canopyZone_5;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-285.53 91.27 24.06);
+        p2      (-285.53 91.27 28.48);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_5;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_5;
+    }
+    {
+        name    canopyZone_6;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-279.42 77.72 22.76);
+        p2      (-279.42 77.72 27.20);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_6;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_6;
+    }
+    {
+        name    canopyZone_7;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-272.41 64.70 23.99);
+        p2      (-272.41 64.70 28.37);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_7;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_7;
+    }
+    {
+        name    canopyZone_8;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-256.46 36.19 24.07);
+        p2      (-256.46 36.19 28.47);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_8;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_8;
+    }
+    {
+        name    canopyZone_9;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-248.18 20.66 24.06);
+        p2      (-248.18 20.66 28.50);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_9;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_9;
+    }
+    {
+        name    canopyZone_10;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-272.02 119.77 19.69);
+        p2      (-272.02 119.77 25.53);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_10;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_10;
+    }
+    {
+        name    canopyZone_12;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-267.14 102.17 21.56);
+        p2      (-267.14 102.17 27.40);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_12;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_12;
+    }
+    {
+        name    canopyZone_11;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-258.61 80.25 21.54);
+        p2      (-258.61 80.25 27.30);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_11;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_11;
+    }
+    {
+        name    canopyZone_13;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-164.19 104.26 15.69);
+        p2      (-164.19 104.26 21.45);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_13;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_13;
+    }
+    {
+        name    canopyZone_14;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-151.43 117.13 13.98);
+        p2      (-151.43 117.13 19.50);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_14;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_14;
+    }
+    {
+        name    canopyZone_15;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-147.59 63.59 15.13);
+        p2      (-147.59 63.59 20.97);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_15;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_15;
+    }
+    {
+        name    canopyZone_16;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-135.17 74.66 15.13);
+        p2      (-135.17 74.66 20.97);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_16;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_16;
+    }
+    {
+        name    canopyZone_17;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-120.40 83.65 13.33);
+        p2      (-120.40 83.65 18.05);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_17;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_17;
+    }
+    {
+        name    canopyZone_18;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-127.92 112.57 14.00);
+        p2      (-127.92 112.57 19.60);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_18;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_18;
+    }
+    {
+        name    canopyZone_20;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-113.83 119.56 12.86);
+        p2      (-113.83 119.56 18.70);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_20;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_20;
+    }
+    {
+        name    canopyZone_19;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-99.20 93.82 12.46);
+        p2      (-99.20 93.82 18.14);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_19;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_19;
+    }
+    {
+        name    canopyZone_22;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-208.85 161.75 17.12);
+        p2      (-208.85 161.75 22.96);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_22;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_22;
+    }
+    {
+        name    canopyZone_21;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-197.16 170.10 15.42);
+        p2      (-197.16 170.10 21.34);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_21;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_21;
+    }
+    {
+        name    canopyZone_24;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-185.09 176.61 14.53);
+        p2      (-185.09 176.61 20.29);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_24;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_24;
+    }
+    {
+        name    canopyZone_23;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-171.93 182.83 14.44);
+        p2      (-171.93 182.83 20.20);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_23;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_23;
+    }
+    {
+        name    canopyZone_25;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-161.38 192.37 13.54);
+        p2      (-161.38 192.37 19.38);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_25;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_25;
+    }
+    {
+        name    canopyZone_27;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-148.64 161.18 13.50);
+        p2      (-148.64 161.18 19.34);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_27;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_27;
+    }
+    {
+        name    canopyZone_26;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-121.08 142.45 12.80);
+        p2      (-121.08 142.45 18.40);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_26;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_26;
+    }
+    {
+        name    canopyZone_28;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-138.86 143.43 14.00);
+        p2      (-138.86 143.43 19.60);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_28;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_28;
+    }
+    {
+        name    canopyZone_29;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-90.16 110.75 11.64);
+        p2      (-90.16 110.75 17.32);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_29;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_29;
+    }
+    {
+        name    canopyZone_30;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-114.67 216.80 11.26);
+        p2      (-114.67 216.80 17.74);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_30;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_30;
+    }
+    {
+        name    canopyZone_31;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-53.56 107.96 10.76);
+        p2      (-53.56 107.96 17.28);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_31;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_31;
+    }
+    {
+        name    canopyZone_32;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-73.85 148.39 10.88);
+        p2      (-73.85 148.39 17.20);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_32;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_32;
+    }
+    {
+        name    canopyZone_33;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-101.43 202.37 11.16);
+        p2      (-101.43 202.37 17.72);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_33;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_33;
+    }
+    {
+        name    canopyZone_34;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-90.84 181.82 11.10);
+        p2      (-90.84 181.82 17.42);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_34;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_34;
+    }
+    {
+        name    canopyZone_35;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-98.75 161.01 11.00);
+        p2      (-98.75 161.01 17.48);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_35;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_35;
+    }
+    {
+        name    canopyZone_36;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-119.07 162.11 12.32);
+        p2      (-119.07 162.11 18.56);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_36;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_36;
+    }
+    {
+        name    canopyZone_37;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-20.01 -256.42 12.79);
+        p2      (-20.01 -256.42 18.31);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_37;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_37;
+    }
+    {
+        name    canopyZone_38;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-47.61 -245.03 13.85);
+        p2      (-47.61 -245.03 19.53);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_38;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_38;
+    }
+    {
+        name    canopyZone_39;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (-33.70 -209.10 12.62);
+        p2      (-33.70 -209.10 19.18);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_39;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_39;
+    }
+    {
+        name    canopyZone_40;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (271.56 -176.53 5.15);
+        p2      (271.56 -176.53 11.79);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_40;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_40;
+    }
+    {
+        name    canopyZone_41;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (310.71 -178.71 6.40);
+        p2      (310.71 -178.71 11.04);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_41;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_41;
+    }
+    {
+        name    canopyZone_42;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (300.40 -159.42 6.28);
+        p2      (300.40 -159.42 10.90);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_42;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_42;
+    }
+    {
+        name    canopyZone_43;
+        type    cellSet;
+        action  new;
+        source  cylinderToCell;
+        p1      (292.65 -189.33 6.93);
+        p2      (292.65 -189.33 11.53);
+        radius  6.00;
+    }
+    {
+        name    canopyZone_43;
+        type    cellZoneSet;  
+        action  new;
+        source  setToCellZone;
+        set     canopyZone_43;
+    }
+);
