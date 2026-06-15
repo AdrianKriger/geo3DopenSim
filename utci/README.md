@@ -29,4 +29,4 @@ foamRun -solver incompressibleFluid | tee foamRun_$(date +%Y%m%d_%H%M).log
 foamPostProcess -time 700:
 ```
 
-A taste of the results are available in the [wStockUTCI.ipynb](...)
+A taste of the results are available in the [wStockUTCI.ipynb](https://github.com/AdrianKriger/geo3DopenSim/blob/main/utci/wStockUTCI.ipynb)
