@@ -16,19 +16,18 @@ FoamFile
 castellatedMesh on; snap on; addLayers off;
 geometry {
     buildings { type triSurfaceMesh; file "buildings.obj"; }
-    refinementBox { type box; min (-854.428401095036 -854.428401095036 0); max (854.428401095036 854.428401095036 43.95); }
-    pedestrianZone { type box; min (-854.428401095036 -854.428401095036 0); max (854.428401095036 854.428401095036 2.0); }
+    refinementBox { type box; min (-960.2170793646596 -960.2170793646596 0); max (960.2170793646596 960.2170793646596 43.95); }
+    pedestrianZone { type box; min (-960.2170793646596 -960.2170793646596 0); max (960.2170793646596 960.2170793646596 2.0); }
 };
 castellatedMeshControls {
     features ( { file "buildings.eMesh"; level 1; } );
     refinementSurfaces { buildings { level (3 3); patchInfo { type wall; } } }
     refinementRegions { refinementBox { mode inside; level 2; } pedestrianZone { mode inside; level 3; } }
-    locationInMesh (722.0236675791966 720.6687340689823 87.9);
+    locationInMesh (0.1 0.1 87.9);
     nCellsBetweenLevels 3;
 }
 snapControls { explicitFeatureSnap true; }
 addLayersControls { relativeSizes true; layers { "buildings" { nSurfaceLayers 2; } } expansionRatio 1.2; 
-                                                                                            finalLayerThickness 0.5; 
-                                                                                            minThickness 0.1;}
+                                                                                          finalLayerThickness 0.5; 
+                                                                                          minThickness 0.1;}
 meshQualityControls { #includeEtc "caseDicts/mesh/generation/meshQualityDict.cfg" }
-mergeTolerance 1e-6;

@@ -54,19 +54,6 @@ functions
                 topology        proximityRegions; 
                 absProximity    1.8;          
             }
-            utciZone
-            {
-                type            cuttingPlane;
-                planeType       pointAndNormal;
-                pointAndNormalDict
-                {
-                    point       (0 0 10.0);
-                    normal      (0 0 1);
-                }
-                signed          false;
-                topology        proximityRegions; 
-                absProximity    11.0;          
-            }
         }
     }
 }
